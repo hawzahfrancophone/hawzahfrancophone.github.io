@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Introduction au Droit Islamique — Hawzah Francophone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--gold:#b89a5a;--gold-light:#d4b87a;--gold-pale:#f5edd8;--dark:#0f0e0b;--dark2:#1a1813;--dark3:#252219;--cream:#faf7f0;--cream2:#f2ece0;--text:#2a2418;--text-light:#6b5f48;--white:#fff;}
+    *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+    ::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-thumb{background:var(--gold);}
+    nav{background:rgba(15,14,11,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(184,154,90,0.2);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:64px;position:sticky;top:0;z-index:100;}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}.nav-logo svg{width:32px;height:32px;}
+    .nav-logo-text .main{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--gold-light);}
+    .nav-logo-text .sub{font-size:0.58rem;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;opacity:0.8;}
+    .nav-back{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.3s;}.nav-back:hover{color:var(--gold-light);}
+    .course-hero{background:var(--dark);padding:80px 5% 60px;position:relative;overflow:hidden;}
+    .course-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 70% 50%,rgba(184,154,90,0.07) 0%,transparent 60%);}
+    .course-hero-inner{position:relative;z-index:2;max-width:900px;margin:0 auto;}
+    .course-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(184,154,90,0.1);border:1px solid rgba(184,154,90,0.3);border-radius:100px;padding:5px 14px;margin-bottom:20px;font-size:0.68rem;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;}
+    .course-arabic-title{font-family:'Amiri',serif;font-size:1.8rem;color:var(--gold);opacity:0.7;direction:rtl;margin-bottom:12px;}
+    .course-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.2rem);font-weight:300;color:var(--white);line-height:1.2;margin-bottom:16px;}
+    .course-hero h1 em{font-style:italic;color:var(--gold-light);}
+    .course-hero-desc{font-size:0.95rem;color:rgba(255,255,255,0.55);line-height:1.85;max-width:620px;margin-bottom:32px;}
+    .course-meta-row{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:32px;}
+    .course-meta-item{display:flex;align-items:center;gap:8px;font-size:0.78rem;color:rgba(255,255,255,0.5);}.course-meta-item span{color:var(--gold);}
+    .btn-enroll{background:var(--gold);color:var(--dark);padding:13px 32px;border:none;border-radius:2px;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block;transition:background 0.3s,transform 0.2s;}.btn-enroll:hover{background:var(--gold-light);transform:translateY(-1px);}
+    .course-layout{max-width:1100px;margin:0 auto;padding:60px 5%;display:grid;grid-template-columns:1fr 320px;gap:50px;align-items:start;}
+    .course-section{margin-bottom:56px;}
+    .course-section-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:var(--text);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--cream2);display:flex;align-items:center;gap:12px;}
+    .course-section-title::before{content:'';width:3px;height:24px;background:var(--gold);border-radius:2px;flex-shrink:0;}
+    .lessons-list{display:flex;flex-direction:column;gap:2px;}
+    .lesson-item{background:var(--white);border:1px solid rgba(0,0,0,0.06);border-radius:3px;overflow:hidden;}
+    .lesson-header{display:flex;align-items:center;gap:16px;padding:18px 20px;cursor:pointer;transition:background 0.2s;}.lesson-header:hover{background:var(--gold-pale);}
+    .lesson-number{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold);font-weight:600;min-width:28px;}
+    .lesson-title{flex:1;font-size:0.9rem;font-weight:500;color:var(--text);}
+    .lesson-duration{font-size:0.72rem;color:var(--text-light);}
+    .lesson-toggle{color:var(--gold);font-size:0.8rem;transition:transform 0.3s;}.lesson-item.open .lesson-toggle{transform:rotate(180deg);}
+    .lesson-body{display:none;padding:0 20px 24px 64px;border-top:1px solid var(--cream2);}.lesson-item.open .lesson-body{display:block;}
+    .lesson-body p{font-size:0.88rem;color:var(--text-light);line-height:1.85;margin-bottom:16px;margin-top:16px;}
+    .lesson-body .ayah{background:var(--dark2);border-right:3px solid var(--gold);padding:16px 20px;margin:16px 0;border-radius:0 3px 3px 0;}
+    .lesson-body .ayah .arabic{font-family:'Amiri',serif;font-size:1.3rem;color:var(--gold-light);direction:rtl;text-align:right;line-height:1.8;margin-bottom:8px;}
+    .lesson-body .ayah .traduction{font-size:0.8rem;color:rgba(255,255,255,0.55);font-style:italic;}
+    .lesson-body .ayah .reference{font-size:0.68rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-top:6px;}
+    .lesson-body .hadith{background:var(--cream2);border-left:3px solid var(--gold);padding:14px 18px;margin:16px 0;border-radius:0 3px 3px 0;}
+    .lesson-body .hadith .arabic{font-family:'Amiri',serif;font-size:1.1rem;color:var(--text);direction:rtl;text-align:right;line-height:1.8;margin-bottom:6px;}
+    .lesson-body .hadith .traduction{font-size:0.82rem;color:var(--text-light);font-style:italic;}
+    .lesson-body .hadith .source{font-size:0.68rem;color:var(--gold);letter-spacing:0.08em;margin-top:4px;}
+    .lesson-body ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin:12px 0;}
+    .lesson-body ul li{font-size:0.86rem;color:var(--text-light);padding-left:16px;position:relative;line-height:1.6;}
+    .lesson-body ul li::before{content:'✦';position:absolute;left:0;color:var(--gold);font-size:0.6rem;top:3px;}
+    .lesson-body .key-concept{background:rgba(184,154,90,0.08);border:1px solid rgba(184,154,90,0.2);border-radius:3px;padding:12px 16px;margin:12px 0;}
+    .lesson-body .key-concept strong{font-size:0.75rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:6px;}
+    .lesson-body .key-concept p{margin:0;font-size:0.84rem;color:var(--text);}
+    .objectives-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+    .objective-card{background:var(--white);border:1px solid rgba(0,0,0,0.06);padding:16px;border-radius:3px;display:flex;align-items:flex-start;gap:12px;}
+    .objective-icon{color:var(--gold);font-size:1rem;flex-shrink:0;margin-top:2px;}.objective-card p{font-size:0.83rem;color:var(--text-light);line-height:1.6;}
+    .course-sidebar{position:sticky;top:84px;}
+    .sidebar-card{background:var(--white);border:1px solid rgba(0,0,0,0.08);border-radius:4px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.08);}
+    .sidebar-thumb{background:var(--dark2);height:160px;display:flex;align-items:center;justify-content:center;position:relative;}
+    .sidebar-thumb-icon{font-family:'Amiri',serif;font-size:4rem;color:var(--gold);opacity:0.4;}
+    .sidebar-thumb-badge{position:absolute;top:12px;left:12px;background:var(--gold);color:var(--dark);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:2px;}
+    .sidebar-body{padding:24px;}
+    .sidebar-price{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--text);margin-bottom:4px;}
+    .sidebar-price .free{color:var(--gold);}
+    .sidebar-price-note{font-size:0.75rem;color:var(--text-light);margin-bottom:20px;}
+    .sidebar-enroll{display:block;width:100%;background:var(--gold);color:var(--dark);padding:13px;border:none;border-radius:2px;font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;text-align:center;transition:background 0.3s;margin-bottom:16px;}.sidebar-enroll:hover{background:var(--gold-light);}
+    .sidebar-includes{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:16px;padding-top:16px;border-top:1px solid var(--cream2);}
+    .sidebar-includes li{font-size:0.8rem;color:var(--text-light);display:flex;align-items:center;gap:10px;}.sidebar-includes li span{color:var(--gold);}
+    .imam-quote{background:var(--dark2);border-radius:4px;padding:28px;margin:32px 0;position:relative;overflow:hidden;}
+    .imam-quote::before{content:'❝';position:absolute;top:-10px;left:16px;font-size:5rem;color:rgba(184,154,90,0.08);font-family:Georgia,serif;line-height:1;}
+    .imam-quote .arabic{font-family:'Amiri',serif;font-size:1.4rem;color:var(--gold-light);direction:rtl;text-align:right;line-height:1.8;margin-bottom:12px;}
+    .imam-quote .french{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:10px;}
+    .imam-quote .source{font-size:0.7rem;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;}
+    .fade-up{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}.fade-up.visible{opacity:1;transform:translateY(0);}
+    @media(max-width:900px){.course-layout{grid-template-columns:1fr;}.course-sidebar{position:static;}.objectives-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 60 60" fill="none"><polygon points="30,4 56,20 56,40 30,56 4,40 4,20" stroke="#b89a5a" stroke-width="1.5" fill="none"/><polygon points="30,14 46,23 46,37 30,46 14,37 14,23" stroke="#b89a5a" stroke-width="1" fill="none" opacity="0.5"/><circle cx="30" cy="30" r="5" fill="#b89a5a" opacity="0.7"/></svg>
+    <div class="nav-logo-text"><span class="main">Hawzah Francophone</span><span class="sub">Institut Islamique</span></div>
+  </a>
+  <a href="index.html" class="nav-back">← Retour aux cours</a>
+</nav>
+<div class="course-hero"><div class="course-hero-bg"></div>
+  <div class="course-hero-inner">
+    <div class="course-badge">Niveau 1 · Fiqh Imamite · École d'Ahlul Bayt ع</div>
+    <div class="course-arabic-title">الفِقهُ الإِسلَامِي</div>
+    <h1>Introduction au <em>Droit Islamique</em></h1>
+    <p class="course-hero-desc">Un aperçu complet du fiqh imamite — ses sources, son histoire et sa méthodologie. Ce cours introduit les fondements du droit islamique selon l'école de l'Ahlul Bayt ع, avec un accent particulier sur le rôle des Imams comme référence législative.</p>
+    <div class="course-meta-row">
+      <div class="course-meta-item"><span>📚</span> 5 leçons</div>
+      <div class="course-meta-item"><span>⏱</span> ~3h</div>
+      <div class="course-meta-item"><span>🌍</span> Français / English</div>
+      <div class="course-meta-item"><span>📖</span> Niveau débutant</div>
+      <div class="course-meta-item"><span>✅</span> Gratuit</div>
+    </div>
+    <a href="#inscription" class="btn-enroll">S'inscrire gratuitement</a>
+  </div>
+</div>
+<div class="course-layout">
+  <div class="course-main">
+    <div class="course-section fade-up">
+      <h2 class="course-section-title">Objectifs du cours</h2>
+      <div class="objectives-grid">
+        <div class="objective-card"><div class="objective-icon">✦</div><p>Comprendre les sources du droit islamique imamite : Coran, Sunna prophétique, hadiths des Imams ع</p></div>
+        <div class="objective-card"><div class="objective-icon">✦</div><p>Connaître l'histoire du développement du fiqh imamite à travers les siècles</p></div>
+        <div class="objective-card"><div class="objective-icon">✦</div><p>Comprendre le concept de Taqlid et le rôle du Marja' dans la tradition imamite</p></div>
+        <div class="objective-card"><div class="objective-icon">✦</div><p>Distinguer les catégories de jugements légaux : wajib, haram, mustahab, makruh, mubah</p></div>
+      </div>
+    </div>
+    <div class="imam-quote fade-up">
+      <div class="arabic">حَلَالُ مُحَمَّدٍ حَلَالٌ أَبَداً إِلَى يَومِ القِيَامَةِ وَحَرَامُهُ حَرَامٌ أَبَداً إِلَى يَومِ القِيَامَةِ</div>
+      <div class="french">« Ce que Muhammad a déclaré licite est licite jusqu'au Jour du Jugement, et ce qu'il a déclaré illicite est illicite jusqu'au Jour du Jugement. »</div>
+      <div class="source">— Imam Ja'far Al-Sadiq ع, Al-Kafi, vol.1</div>
+    </div>
+    <div class="course-section fade-up">
+      <h2 class="course-section-title">Leçons du cours</h2>
+      <div class="lessons-list">
+        <div class="lesson-item open">
+          <div class="lesson-header" onclick="toggleLesson(this)"><div class="lesson-number">01</div><div class="lesson-title">Définition et sources du Fiqh Imamite</div><div class="lesson-duration">35 min</div><div class="lesson-toggle">▼</div></div>
+          <div class="lesson-body">
+            <p>Le <strong>Fiqh</strong> (الفقه) signifie littéralement la "compréhension profonde". En terminologie islamique, il désigne la science des jugements légaux pratiques dérivés de leurs preuves détaillées. Le fiqh imamite reconnaît quatre sources principales :</p>
+            <ul>
+              <li><strong>Le Saint Coran</strong> — Source première et absolue</li>
+              <li><strong>La Sunna du Prophète ﷺ</strong> — Ses paroles, actes et approbations tacites</li>
+              <li><strong>Les hadiths des douze Imams ع</strong> — Source spécifique au fiqh imamite</li>
+              <li><strong>L'Aql (العقل)</strong> — La raison, utilisée comme source indépendante</li>
+            </ul>
+            <div class="key-concept"><strong>Particularité imamite</strong><p>Le fiqh imamite se distingue par l'inclusion des hadiths des Imams ع comme source législative autonome et par le rejet du Qiyas (raisonnement analogique) comme source de droit.</p></div>
+          </div>
+        </div>
+        <div class="lesson-item">
+          <div class="lesson-header" onclick="toggleLesson(this)"><div class="lesson-number">02</div><div class="lesson-title">Les cinq catégories de jugements légaux (Al-Ahkam Al-Khamsa)</div><div class="lesson-duration">30 min</div><div class="lesson-toggle">▼</div></div>
+          <div class="lesson-body">
+            <p>Tout acte humain tombe dans l'une des cinq catégories de jugements légaux :</p>
+            <ul>
+              <li><strong>Wajib (واجب)</strong> — Obligatoire : l'accomplissement est récompensé, l'omission est punie (ex: la prière quotidienne)</li>
+              <li><strong>Haram (حرام)</strong> — Interdit : l'accomplissement est puni, l'évitement est récompensé (ex: le mensonge)</li>
+              <li><strong>Mustahab (مستحب)</strong> — Recommandé : l'accomplissement est récompensé, l'omission n'est pas punie (ex: la prière de nuit)</li>
+              <li><strong>Makruh (مكروه)</strong> — Répréhensible : l'évitement est récompensé, l'accomplissement n'est pas puni</li>
+              <li><strong>Mubah (مباح)</strong> — Permis : ni récompensé ni puni</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lesson-item">
+          <div class="lesson-header" onclick="toggleLesson(this)"><div class="lesson-number">03</div><div class="lesson-title">Le Taqlid et le Marja' — L'autorité religieuse imamite</div><div class="lesson-duration">40 min</div><div class="lesson-toggle">▼</div></div>
+          <div class="lesson-body">
+            <p>Le <strong>Taqlid</strong> (التقليد) est l'obligation pour le croyant non-spécialiste de suivre les avis juridiques d'un savant qualifié appelé <strong>Marja'</strong> (مرجع). En l'absence de l'Imam Al-Mahdi عج, le Marja' est le représentant général (nayib 'am) de l'Imam.</p>
+            <div class="key-concept"><strong>Conditions du Marja'</strong><p>Pour être Marja', un savant doit être : homme adulte, Muslim, chiite imamite, vivant, juste ('adil), le plus savant (a'lam) en fiqh, de naissance licite, et sain d'esprit.</p></div>
+            <div class="hadith">
+              <div class="arabic">فَأَمَّا مَن كَانَ مِنَ الفُقَهَاءِ صَائِناً لِنَفسِهِ حَافِظاً لِدِينِهِ مُخَالِفاً لِهَوَاهُ مُطِيعاً لِأَمرِ مَولَاهُ فَلِلعَوَامِّ أَن يُقَلِّدُوهُ</div>
+              <div class="traduction">« Quant au juriste qui préserve sa dignité, garde sa religion, s'oppose à ses désirs et obéit aux ordres de son Maître — il est permis au commun des gens de le suivre en Taqlid. »</div>
+              <div class="source">Imam Al-Hasan Al-'Askari ع, Tafsir Al-'Askari</div>
+            </div>
+          </div>
+        </div>
+        <div class="lesson-item">
+          <div class="lesson-header" onclick="toggleLesson(this)"><div class="lesson-number">04</div><div class="lesson-title">Histoire du développement du Fiqh Imamite</div><div class="lesson-duration">35 min</div><div class="lesson-toggle">▼</div></div>
+          <div class="lesson-body">
+            <p>Le fiqh imamite a connu plusieurs périodes de développement :</p>
+            <ul>
+              <li><strong>L'ère des Imams (jusqu'en 260 H)</strong> — Les Imams eux-mêmes répondaient directement aux questions juridiques de leurs compagnons</li>
+              <li><strong>L'ère de la Grande Occultation (329 H - présent)</strong> — Les savants exercent l'ijtihad en s'appuyant sur les sources transmises</li>
+              <li><strong>L'école de Baghdad (4e-5e siècles H)</strong> — Sheikh Al-Mufid, Sheikh Al-Tusi : développement de la méthodologie juridique</li>
+              <li><strong>L'école d'Hilla (6e-8e siècles H)</strong> — Al-Muhaqqiq Al-Hilli, Al-'Allama Al-Hilli : codification systématique</li>
+              <li><strong>L'école d'Isfahan et Najaf (10e siècle H - présent)</strong> — Développement du Wilayat Al-Faqih et des grandes marjas</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lesson-item">
+          <div class="lesson-header" onclick="toggleLesson(this)"><div class="lesson-number">05</div><div class="lesson-title">L'Ijtihad — L'effort d'interprétation juridique</div><div class="lesson-duration">35 min</div><div class="lesson-toggle">▼</div></div>
+          <div class="lesson-body">
+            <p>L'<strong>Ijtihad</strong> (الاجتهاد) est l'effort intellectuel maximal du juriste qualifié (mujtahid) pour déduire un jugement légal à partir des sources du droit islamique. Dans la tradition imamite, l'ijtihad est une obligation collective (wajib kifa'i).</p>
+            <div class="ayah">
+              <div class="arabic">فَلَوْلَا نَفَرَ مِن كُلِّ فِرْقَةٍ مِّنْهُمْ طَائِفَةٌ لِّيَتَفَقَّهُوا فِي الدِّينِ</div>
+              <div class="traduction">« Pourquoi donc, de chaque communauté, un groupe ne part-il pas pour s'instruire dans la religion ? »</div>
+              <div class="reference">Sourate Al-Tawba (9), verset 122</div>
+            </div>
+            <div class="key-concept"><strong>Ijtihad vs Taqlid</strong><p>Tout musulman est soit mujtahid (capable de déduire lui-même les jugements), soit muqallid (suivant un marja'). Il n'est pas permis à un non-spécialiste de pratiquer l'ijtihad — cela mènerait à des erreurs dans l'application de la loi divine.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="course-sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-thumb"><div class="sidebar-thumb-icon">الفقه</div><div class="sidebar-thumb-badge">Gratuit</div></div>
+      <div class="sidebar-body">
+        <div class="sidebar-price"><span class="free">Gratuit</span></div>
+        <div class="sidebar-price-note">Accès illimité à toutes les leçons</div>
+        <button class="sidebar-enroll" id="inscription">Commencer le cours</button>
+        <ul class="sidebar-includes">
+          <li><span>📚</span> 5 leçons complètes</li>
+          <li><span>⚖️</span> Fiqh imamite authentique</li>
+          <li><span>💬</span> Hadiths des Imams ع</li>
+          <li><span>🧠</span> Concepts juridiques clés</li>
+          <li><span>🌍</span> Français / English</li>
+          <li><span>♾️</span> Accès à vie</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<footer style="background:var(--dark);color:rgba(255,255,255,0.4);text-align:center;padding:30px;font-size:0.78rem;border-top:1px solid rgba(184,154,90,0.1);">
+  <p style="font-family:'Amiri',serif;color:rgba(184,154,90,0.5);font-size:1rem;margin-bottom:8px;">الحوزة الفرانكوفونية</p>
+  © 2026 Hawzah Francophone — <a href="index.html" style="color:var(--gold);text-decoration:none;">Retour à l'accueil</a>
+</footer>
+<script>function toggleLesson(h){h.parentElement.classList.toggle('open');}const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.1});document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));</script>
+</body></html>
